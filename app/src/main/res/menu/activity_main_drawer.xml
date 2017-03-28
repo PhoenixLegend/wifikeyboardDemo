@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Navigation">
+            <menu>
+                <item
+                    android:id="@+id/invite"
+                    android:icon="@drawable/invite"
+                    android:title="Invite"/>
+                <item
+                    android:id="@+id/help"
+                    android:icon="@drawable/howtouse"
+                    android:title="Help"/>
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/setting"
+                    android:title="Settings"/>
+                <item
+                    android:id="@+id/quit"
+                    android:icon="@drawable/quit"
+                    android:title="Quit"/>
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.edu.cqu.wifikeyborad.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary"
+        >
+    </android.support.v7.widget.Toolbar>
+    <android.support.v4.view.ViewPager
+    android:id="@+id/viewpager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_alignParentStart="true">
+
+    <android.support.v4.view.PagerTitleStrip
+        android:id="@+id/pagertitle"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="top"
+
+        />
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>
