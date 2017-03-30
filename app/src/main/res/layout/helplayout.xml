@@ -6,4 +6,12 @@
     android:background="#ffffff"
     >
 
+    <TextView
+        android:text="This about how to use this app."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewHelping"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"/>
+
 </LinearLayout>

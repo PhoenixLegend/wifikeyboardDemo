@@ -1,7 +1,10 @@
 package cn.edu.cqu.wifikeyborad;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
@@ -48,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-
                 }
          @Override
          public void onDrawerClosed(View drawerView) {
@@ -70,19 +72,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             switch (id) {
                 case R.id.invite:
                     mDrawerLayout.closeDrawers();
+                    Uri uri = Uri.parse("https://phoenixlegend.github.io/");
+                    Intent invite = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(invite);
                     break;
 
                 case R.id.help:
                     mDrawerLayout.closeDrawers();
                     Intent intentHelp = new Intent();
                     intentHelp.setClass(this.getApplicationContext(),Help.class);
+                    intentHelp.putExtra("currentpage",0);
                     startActivity(intentHelp);
                     break;
                 case R.id.settings:
                     mDrawerLayout.closeDrawers();
                     Intent intentSettings = new Intent();
-                    intentSettings.setClass(this.getApplicationContext(),Settings.class);
-                    startActivity(intentSettings);
+                    intentSettings.setClass(this.getApplicationContext(),Help.class);
+                    intentSettings.putExtra("currentpage",1);
+                    startActivityForResult(intentSettings, 1);
                    break;
                 case R.id.quit:
                     finishAffinity();
@@ -95,6 +102,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String result=data.getStringExtra("result");
+                switch (result){
+                    case "1":
+                        mDrawerLayout.setBackgroundColor(getResources().getColor(R.color.one));
+                        break;
+                    case "2":
+                        mDrawerLayout.setBackgroundColor(getResources().getColor(R.color.twe));
+                        break;
+                    case "3":
+                        mDrawerLayout.setBackgroundColor(getResources().getColor(R.color.there));
+                        break;
+
+                }
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }
 }
 
 

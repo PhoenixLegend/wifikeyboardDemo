@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Blue" parent="AppTheme">
+        <item name="android:windowBackground">@color/one</item>
+    </style>
+    <style name="Theme.White" parent="AppTheme">
+        <item name="android:windowBackground">@color/twe</item>
+    </style>
+    <style name="Theme.Black" parent="AppTheme">
+        <item name="android:windowBackground">@color/there</item>
+    </style>
+</resources>
