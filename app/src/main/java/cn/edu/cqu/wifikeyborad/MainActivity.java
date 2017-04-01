@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.support.design.widget.NavigationView;
@@ -125,6 +126,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Write your code if there's no result
             }
         }
+    }
+
+    public void inputmethod(View view) {
+        //        Intent intent=new Intent(android.provider.Settings.ACTION_INPUT_METHOD_SETTINGS);
+//        startActivity(intent);
+        InputMethodManager imeManager = (InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
+        imeManager.showInputMethodPicker();
+
     }
 }
 
